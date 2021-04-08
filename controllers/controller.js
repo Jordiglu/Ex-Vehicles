@@ -36,7 +36,7 @@ form.addEventListener('submit', function (e) {
         carForm.remove();
         wheelApp.style.display = 'block';
     }
-    if ((/^\d{4}[A-Z a-z]{3}/.test(plate.value))) {
+    if ((/^\d{4}[a-z]{3}/.test(plate.value))) {
         var div = document.createElement("div");
         div.innerHTML = " \n    <strong>CAR:</strong><br>\n    <div class=\"row mb-3 pt-3\"> \n      <div class=\"form-group col-md-2\">\n         <strong>Plate</strong>: " + car.plate + "\n      </div>\n      <div class=\"form-group col-md-2\">\n        <strong>Color</strong>: " + car.color + "\n      </div>\n       <div class=\"form-group col-md-2\">\n          <strong>Brand</strong>: " + car.brand + "<br>\n       </div>\n    </div>\n    </div>";
         carList === null || carList === void 0 ? void 0 : carList.appendChild(div);

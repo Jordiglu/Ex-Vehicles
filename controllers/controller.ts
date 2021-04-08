@@ -42,7 +42,7 @@ form.addEventListener('submit', (e: Event) => {
       carForm.remove();
       wheelApp.style.display = 'block';
    }
-   if ((/^\d{4}[A-Z a-z]{3}/.test(plate.value))) {
+   if ((/^\d{4}[a-z]{3}/.test(plate.value))) {
       const div = document.createElement("div");
       div.innerHTML = ` 
     <strong>CAR:</strong><br>
