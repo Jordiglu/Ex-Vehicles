@@ -105,6 +105,9 @@ wheelForm.addEventListener('submit', function (e) {
         var div = document.createElement("div");
         div.innerHTML = "<strong>Wheels:</strong><br>\n    <div class=\"row mb-4\"> \n      <div class=\"form-group col-md-2\">\n         <strong>Marca Rueda1</strong>: " + marca1 + "\n         <strong>Diametro</strong>: " + wheel1 + "\n      </div>\n      <div class=\"form-group col-md-2\">\n        <strong>Marca Rueda 2</strong>:" + marca2 + "\n        <strong>Diametro</strong>:  " + wheel2 + "\n      </div>\n    <div class=\"form-group col-md-2\">\n      <strong>Marca Rueda 3</strong>: " + marca3 + "\n      <strong>Diametro</strong>:  " + wheel3 + "\n    </div>\n    <div class=\"form-group col-md-2\">\n        <strong>Marca Rueda 4</strong>: " + marca4 + "\n       <strong>Diametro</strong>:  " + wheel4 + "\n    </div>\n       </div>\n    </div>";
         carWheel === null || carWheel === void 0 ? void 0 : carWheel.appendChild(div);
+        if (true) {
+            wheelForm.reset();
+        }
     }
     e.preventDefault();
 });

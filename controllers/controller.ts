@@ -159,8 +159,12 @@ wheelForm.addEventListener('submit', (e: Event) => {
 
 
       carWheel?.appendChild(div);
+      if (true) {
+         wheelForm.reset();
+      }
 
    }
+
    e.preventDefault();
 });
 
