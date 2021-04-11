@@ -69,7 +69,11 @@ wheelForm.addEventListener('submit', (e: Event) => {
 
    const displayWheel: any = document.querySelector('#displayWheel');
 
-   if (marcaRueda1.value == "" && marcaRueda2.value == "" && marcaRueda3.value == "" && marcaRueda1.value == "") {
+   if (marcaRueda1.value == "" && marcaRueda2.value == ""
+      && marcaRueda3.value == "" && marcaRueda1.value == ""
+      && diametro1.value == "" && diametro2.value == ""
+      && diametro3.value == "" && diametro4.value == "") {
+
       marcaRueda1.classList.add("is-invalid");
       document.getElementById("errorRueda1")!.textContent = "El campo es obligatorio";
       marcaRueda2.classList.add("is-invalid");
@@ -78,8 +82,6 @@ wheelForm.addEventListener('submit', (e: Event) => {
       document.getElementById("errorRueda3")!.textContent = "El campo es obligatorio";
       marcaRueda4.classList.add("is-invalid");
       document.getElementById("errorRueda4")!.textContent = "El campo es obligatorio";
-   }
-   if (diametro1.value == "" && diametro2.value == "" && diametro3.value == "" && diametro4.value == "") {
       diametro1.classList.add("is-invalid");
       document.getElementById("errorDiametro1")!.textContent = "El campo es obligatorio";
       diametro2.classList.add("is-invalid");
@@ -89,7 +91,6 @@ wheelForm.addEventListener('submit', (e: Event) => {
       diametro4.classList.add("is-invalid");
       document.getElementById("errorDiametro4")!.textContent = "El campo es obligatorio";
    }
-
    else if (parseFloat(diametro1.value) > 2 || parseFloat(diametro1.value) < 0.4) {
       diametro1.classList.add("is-invalid");
       document.getElementById("errorDiametro1")!.textContent = "El diámetro no es correcto";
@@ -105,18 +106,17 @@ wheelForm.addEventListener('submit', (e: Event) => {
    else if (parseFloat(diametro4.value) > 2 || parseFloat(diametro4.value) < 0.4) {
       diametro4.classList.add("is-invalid");
       document.getElementById("errorDiametro4")!.textContent = "El diámetro no es correcto";
-
    }
    else if (true) {
       displayWheel.style.display = 'block';
-      document.getElementById("brand1")!.textContent = `${marca1}`
-      document.getElementById("rueda1")!.textContent = `${wheel1}`
-      document.getElementById("brand2")!.textContent = `${marca2}`
-      document.getElementById("rueda2")!.textContent = `${wheel2}`
-      document.getElementById("brand3")!.textContent = `${marca3}`
-      document.getElementById("rueda3")!.textContent = `${wheel3}`
-      document.getElementById("brand4")!.textContent = `${marca4}`
-      document.getElementById("rueda4")!.textContent = `${wheel4}`
+      document.getElementById("brand1")!.textContent = `${marca1}`;
+      document.getElementById("rueda1")!.textContent = `${wheel1}`;
+      document.getElementById("brand2")!.textContent = `${marca2}`;
+      document.getElementById("rueda2")!.textContent = `${wheel2}`;
+      document.getElementById("brand3")!.textContent = `${marca3}`;
+      document.getElementById("rueda3")!.textContent = `${wheel3}`;
+      document.getElementById("brand4")!.textContent = `${marca4}`;
+      document.getElementById("rueda4")!.textContent = `${wheel4}`;
       wheelForm.reset();
    }
    e.preventDefault();
@@ -132,31 +132,3 @@ wheelForm.addEventListener('blur', function (e: any) {
    if (e.target.value != "")
       e.target.classList.remove('is-invalid');
 }, true);
-
-// console.log(new Wheel(diame.value,wheel1));
-
-
-  //    const div = document.createElement("div");
-   //    div.innerHTML = `<strong>Wheels:</strong><br>
-   //  <div class="row mb-4"> 
-   //    <div class="form-group col-md-2">
-   //       <strong>Marca Rueda1</strong>: ${marca1}
-   //       <strong>Diametro</strong>: ${wheel1}
-   //    </div>
-   //    <div class="form-group col-md-2">
-   //      <strong>Marca Rueda 2</strong>:${marca2}
-   //      <strong>Diametro</strong>:  ${wheel2}
-   //    </div>
-   //  <div class="form-group col-md-2">
-   //    <strong>Marca Rueda 3</strong>: ${marca3}
-   //    <strong>Diametro</strong>:  ${wheel3}
-   //  </div>
-   //  <div class="form-group col-md-2">
-   //      <strong>Marca Rueda 4</strong>: ${marca4}
-   //     <strong>Diametro</strong>:  ${wheel4}
-   //  </div>
-   //     </div>
-   //  </div>`
-   //       ;
-
-   //    carWheel?.appendChild(div);

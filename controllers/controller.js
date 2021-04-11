@@ -57,7 +57,10 @@ wheelForm.addEventListener('submit', function (e) {
     var wheel3 = diametro3.value;
     var wheel4 = diametro4.value;
     var displayWheel = document.querySelector('#displayWheel');
-    if (marcaRueda1.value == "" && marcaRueda2.value == "" && marcaRueda3.value == "" && marcaRueda1.value == "") {
+    if (marcaRueda1.value == "" && marcaRueda2.value == ""
+        && marcaRueda3.value == "" && marcaRueda1.value == ""
+        && diametro1.value == "" && diametro2.value == ""
+        && diametro3.value == "" && diametro4.value == "") {
         marcaRueda1.classList.add("is-invalid");
         document.getElementById("errorRueda1").textContent = "El campo es obligatorio";
         marcaRueda2.classList.add("is-invalid");
@@ -66,8 +69,6 @@ wheelForm.addEventListener('submit', function (e) {
         document.getElementById("errorRueda3").textContent = "El campo es obligatorio";
         marcaRueda4.classList.add("is-invalid");
         document.getElementById("errorRueda4").textContent = "El campo es obligatorio";
-    }
-    if (diametro1.value == "" && diametro2.value == "" && diametro3.value == "" && diametro4.value == "") {
         diametro1.classList.add("is-invalid");
         document.getElementById("errorDiametro1").textContent = "El campo es obligatorio";
         diametro2.classList.add("is-invalid");
@@ -116,27 +117,3 @@ wheelForm.addEventListener('blur', function (e) {
     if (e.target.value != "")
         e.target.classList.remove('is-invalid');
 }, true);
-// console.log(new Wheel(diame.value,wheel1));
-//    const div = document.createElement("div");
-//    div.innerHTML = `<strong>Wheels:</strong><br>
-//  <div class="row mb-4"> 
-//    <div class="form-group col-md-2">
-//       <strong>Marca Rueda1</strong>: ${marca1}
-//       <strong>Diametro</strong>: ${wheel1}
-//    </div>
-//    <div class="form-group col-md-2">
-//      <strong>Marca Rueda 2</strong>:${marca2}
-//      <strong>Diametro</strong>:  ${wheel2}
-//    </div>
-//  <div class="form-group col-md-2">
-//    <strong>Marca Rueda 3</strong>: ${marca3}
-//    <strong>Diametro</strong>:  ${wheel3}
-//  </div>
-//  <div class="form-group col-md-2">
-//      <strong>Marca Rueda 4</strong>: ${marca4}
-//     <strong>Diametro</strong>:  ${wheel4}
-//  </div>
-//     </div>
-//  </div>`
-//       ;
-//    carWheel?.appendChild(div);
