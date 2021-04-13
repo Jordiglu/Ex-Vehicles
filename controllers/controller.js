@@ -94,7 +94,7 @@ wheelForm.addEventListener('submit', function (e) {
         diametro4.classList.add("is-invalid");
         document.getElementById("errorDiametro4").textContent = "El diámetro no es correcto";
     }
-    else if (true) {
+    else if (diametro1.value == true && diametro2.value == true && diametro3.value == true && diametro4.value == true) {
         displayWheel.style.display = 'block';
         document.getElementById("brand1").textContent = "" + marca1;
         document.getElementById("rueda1").textContent = "" + wheel1;

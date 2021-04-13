@@ -51,10 +51,10 @@ wheelForm.addEventListener('submit', (e: Event) => {
    const marcaRueda3 = document.querySelector("#marcaRueda3") as HTMLInputElement;
    const marcaRueda4 = document.querySelector("#marcaRueda4") as HTMLInputElement;
 
-   const diametro1 = document.querySelector("#diametro1") as HTMLInputElement;
-   const diametro2 = document.querySelector("#diametro2") as HTMLInputElement;
-   const diametro3 = document.querySelector("#diametro3") as HTMLInputElement;
-   const diametro4 = document.querySelector("#diametro4") as HTMLInputElement;
+   const diametro1: any = document.querySelector("#diametro1") as HTMLInputElement;
+   const diametro2: any = document.querySelector("#diametro2") as HTMLInputElement;
+   const diametro3: any = document.querySelector("#diametro3") as HTMLInputElement;
+   const diametro4: any = document.querySelector("#diametro4") as HTMLInputElement;
 
 
    let marca1 = marcaRueda1.value.toUpperCase();
@@ -66,6 +66,7 @@ wheelForm.addEventListener('submit', (e: Event) => {
    let wheel2 = diametro2.value;
    let wheel3 = diametro3.value;
    let wheel4 = diametro4.value;
+
 
    const displayWheel: any = document.querySelector('#displayWheel');
 
@@ -107,7 +108,8 @@ wheelForm.addEventListener('submit', (e: Event) => {
       diametro4.classList.add("is-invalid");
       document.getElementById("errorDiametro4")!.textContent = "El diámetro no es correcto";
    }
-   else if (true) {
+
+   else if (diametro1.value == true && diametro2.value == true && diametro3.value == true && diametro4.value == true) {
       displayWheel.style.display = 'block';
       document.getElementById("brand1")!.textContent = `${marca1}`;
       document.getElementById("rueda1")!.textContent = `${wheel1}`;
