@@ -45,22 +45,25 @@ form.addEventListener('submit', (e: Event) => {
 //Submit Wheel Form
 
 wheelForm.addEventListener('submit', (e: Event) => {
-   //Wheel Inputs Form
-   const marcaRueda1 = document.querySelector("#marcaRueda1") as HTMLInputElement;
-   const marcaRueda2 = document.querySelector("#marcaRueda2") as HTMLInputElement;
-   const marcaRueda3 = document.querySelector("#marcaRueda3") as HTMLInputElement;
-   const marcaRueda4 = document.querySelector("#marcaRueda4") as HTMLInputElement;
+   // Wheel Inputs Form
 
    const diametro1: any = document.querySelector("#diametro1") as HTMLInputElement;
    const diametro2: any = document.querySelector("#diametro2") as HTMLInputElement;
    const diametro3: any = document.querySelector("#diametro3") as HTMLInputElement;
    const diametro4: any = document.querySelector("#diametro4") as HTMLInputElement;
+   const marcaRueda1: any = document.querySelector("#marcaRueda1") as HTMLInputElement;
+   const marcaRueda2: any = document.querySelector("#marcaRueda2") as HTMLInputElement;
+   const marcaRueda3: any = document.querySelector("#marcaRueda3") as HTMLInputElement;
+   const marcaRueda4: any = document.querySelector("#marcaRueda4") as HTMLInputElement;
 
+   const displayWheel: any = document.querySelector('#displayWheel');
 
    let marca1 = marcaRueda1.value.toUpperCase();
    let marca2 = marcaRueda2.value.toUpperCase();
    let marca3 = marcaRueda3.value.toUpperCase();
    let marca4 = marcaRueda4.value.toUpperCase();
+
+
 
    let wheel1 = diametro1.value;
    let wheel2 = diametro2.value;
@@ -68,20 +71,16 @@ wheelForm.addEventListener('submit', (e: Event) => {
    let wheel4 = diametro4.value;
 
 
-   const displayWheel: any = document.querySelector('#displayWheel');
+   // for (let i = 1; i <= 4; i++) {
 
-   if (marcaRueda1.value == "" && marcaRueda2.value == ""
-      && marcaRueda3.value == "" && marcaRueda1.value == ""
-      && diametro1.value == "" && diametro2.value == ""
-      && diametro3.value == "" && diametro4.value == "") {
-
-      marcaRueda1.classList.add("is-invalid");
+   if (marcaRueda1.value == "" && marcaRueda2.value == "" && marcaRueda3.value == "" && marcaRueda4.value == "" && wheel1 == "" && wheel2 == "" && wheel3 == "" && wheel4 == "") {
+      marcaRueda1.classList.add('is-invalid');
       document.getElementById("errorRueda1")!.textContent = "El campo es obligatorio";
-      marcaRueda2.classList.add("is-invalid");
+      marcaRueda2.classList.add('is-invalid');
       document.getElementById("errorRueda2")!.textContent = "El campo es obligatorio";
-      marcaRueda3.classList.add("is-invalid");
+      marcaRueda3.classList.add('is-invalid');
       document.getElementById("errorRueda3")!.textContent = "El campo es obligatorio";
-      marcaRueda4.classList.add("is-invalid");
+      marcaRueda4.classList.add('is-invalid');
       document.getElementById("errorRueda4")!.textContent = "El campo es obligatorio";
       diametro1.classList.add("is-invalid");
       document.getElementById("errorDiametro1")!.textContent = "El campo es obligatorio";
