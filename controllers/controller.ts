@@ -9,27 +9,32 @@ const wheelForm: any = document.querySelector('#wheelForm') as HTMLFormElement;
 
 let acumerror: number = 0;
 form.addEventListener('submit', (e: Event) => {
+   e.preventDefault();
 
    const plate = document.querySelector("#plate") as HTMLInputElement;
    const brand = document.querySelector("#brand") as HTMLInputElement;
    const color = document.querySelector("#color") as HTMLInputElement;
 
-   if (plate.value == "" && color.value == "" && brand.value == "") {
+   if (plate.value == "") {
       plate.classList.add("is-invalid");
       document.getElementById("errorPlate")!.textContent = "El campo es obligatorio";
+      acumerror++;
+   }
+   else if (color.value == "") {
       color.classList.add("is-invalid");
       document.getElementById("errorColor")!.textContent = "El campo es obligatorio";
+      acumerror++;
+   } else if (brand.value == "") {
       brand.classList.add("is-invalid");
       document.getElementById("errorBrand")!.textContent = "El campo es obligatorio";
       acumerror++;
-   } else if (!(/^\d{4}[a-z]{3}/.test(plate.value))) {
+   }
+   else if (!(/^\d{4}[a-z]{3}/.test(plate.value))) {
       plate.classList.add("is-invalid");
       document.getElementById("errorPlate")!.textContent = "La matricula debe contener 4 numeros y 3 letras";
       acumerror++;
    }
-   if (acumerror > 0) {
-      acumerror = 0;
-   } else {
+   if (acumerror == 0) {
       car = new Car(plate.value.toUpperCase(), color.value.toUpperCase(), brand.value.toUpperCase());
       document.getElementById("carPlate")!.textContent = `${car.plate}`
       document.getElementById("carColor")!.textContent = `${car.color}`
@@ -37,7 +42,7 @@ form.addEventListener('submit', (e: Event) => {
       carForm.remove();
       wheelApp.style.display = 'block';
    }
-   e.preventDefault();
+   console.log(acumerror);
 
 });
 
